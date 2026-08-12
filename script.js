@@ -867,8 +867,64 @@ function initMosaicAssemble(canvas, source, opts) {
   io.observe(canvas);
 }
 
+/* ---------------------------------------------------------
+   Newsletter signup. Front-end only until NEWSLETTER_ENDPOINT
+   is set to a real provider (Mailchimp, ConvertKit, Beehiiv,
+   Buttondown, a custom API, ...) — until then it validates
+   the address and shows a placeholder confirmation instead of
+   pretending an email was actually sent anywhere.
+--------------------------------------------------------- */
+const NEWSLETTER_ENDPOINT = '';
+
+function initNewsletterForm(form) {
+  const input = form.querySelector('.newsletter-input');
+  const status = document.getElementById('newsletterStatus');
+  const button = form.querySelector('button');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = input.value.trim();
+    const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    if (!isValid) {
+      status.textContent = 'Bitte eine gültige E-Mail-Adresse eingeben.';
+      status.className = 'newsletter-status error';
+      input.focus();
+      return;
+    }
+
+    if (!NEWSLETTER_ENDPOINT) {
+      status.textContent = 'Danke für dein Interesse — der Versand startet in Kürze.';
+      status.className = 'newsletter-status success';
+      form.reset();
+      return;
+    }
+
+    button.disabled = true;
+    try {
+      const res = await fetch(NEWSLETTER_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      if (!res.ok) throw new Error('request failed');
+      status.textContent = 'Danke! Du bist angemeldet.';
+      status.className = 'newsletter-status success';
+      form.reset();
+    } catch (err) {
+      status.textContent = 'Etwas ist schiefgelaufen — bitte später erneut versuchen.';
+      status.className = 'newsletter-status error';
+    } finally {
+      button.disabled = false;
+    }
+  });
+}
+
 /* boot */
 window.addEventListener('DOMContentLoaded', () => {
+  const newsletterForm = document.getElementById('newsletterForm');
+  if (newsletterForm) initNewsletterForm(newsletterForm);
+
   const assembleCanvas = document.getElementById('mosaic-assemble-canvas');
   const mosaicDistortionCanvas = document.getElementById('mosaic-distortion-canvas');
   if (assembleCanvas && mosaicDistortionCanvas) {

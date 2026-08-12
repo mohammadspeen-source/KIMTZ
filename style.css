@@ -353,6 +353,36 @@ a{ color:inherit; text-decoration:none; }
 }
 .kontakt-meta a:hover{ color:var(--accent); }
 
+/* ---------- Newsletter ---------- */
+.section-eyebrow{
+  font-family:var(--mono); font-size:12px; letter-spacing:0.1em; text-transform:uppercase;
+  color:var(--accent); margin:0 0 12px;
+}
+.newsletter{ text-align:center; padding-top:0; }
+.newsletter-inner{ max-width:560px; margin:0 auto; }
+.newsletter h2{ font-size:clamp(24px,3.4vw,36px); margin:0 0 16px; letter-spacing:-0.01em; }
+.newsletter-lead{ color:var(--text-dim); font-size:15px; margin:0 0 32px; }
+.newsletter-form{
+  display:flex; gap:12px; justify-content:center; flex-wrap:wrap;
+}
+.newsletter-input{
+  flex:1; min-width:220px; max-width:340px;
+  padding:14px 22px; border-radius:100px;
+  border:1px solid var(--panel-border); background:var(--panel); color:var(--text);
+  font-size:14.5px; font-family:var(--sans);
+  transition:border-color .2s ease, box-shadow .2s ease;
+}
+.newsletter-input::placeholder{ color:var(--text-faint); }
+.newsletter-input:focus{
+  outline:none; border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-dim);
+}
+.newsletter-status{
+  margin:16px 0 0; min-height:18px;
+  font-family:var(--mono); font-size:12.5px; color:var(--text-dim);
+}
+.newsletter-status.success{ color:var(--accent); }
+.newsletter-status.error{ color:#ff9d9d; }
+
 /* ---------- Footer ---------- */
 .site-footer{
   display:flex; justify-content:space-between; padding:32px clamp(20px,5vw,64px);
@@ -384,6 +414,8 @@ a{ color:inherit; text-decoration:none; }
   .expertise-grid{ grid-template-columns:1fr; }
   .hero-meta{ gap:24px; }
   .snapshot-cards{ grid-template-columns:1fr; }
+  .newsletter-form{ flex-direction:column; align-items:stretch; }
+  .newsletter-input{ max-width:none; }
 }
 
 /* nav open state (mobile) */
