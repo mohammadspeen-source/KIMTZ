@@ -868,13 +868,15 @@ function initMosaicAssemble(canvas, source, opts) {
 }
 
 /* ---------------------------------------------------------
-   Newsletter signup. Front-end only until NEWSLETTER_ENDPOINT
-   is set to a real provider (Mailchimp, ConvertKit, Beehiiv,
-   Buttondown, a custom API, ...) — until then it validates
-   the address and shows a placeholder confirmation instead of
-   pretending an email was actually sent anywhere.
+   Newsletter signup — stored in Supabase (Postgres + auto REST
+   API, project "mohammad-speen-newsletter", region eu-central-1).
+   The anon key below is safe to expose in client-side code by
+   design; it can only INSERT into newsletter_signups (see the
+   RLS policy on that table), never read, update or delete rows.
 --------------------------------------------------------- */
-const NEWSLETTER_ENDPOINT = '';
+const SUPABASE_URL = 'https://gopphwyycxlxpuhsraff.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdvcHBod3l5Y3hseHB1aHNyYWZmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY1NDEyNjMsImV4cCI6MjEwMjExNzI2M30.m4oFd7aDw4pnHgyE6Wx8fbGjvaFyxcQNmIy14_18Z9A';
+const NEWSLETTER_ENDPOINT = `${SUPABASE_URL}/rest/v1/newsletter_signups`;
 
 function initNewsletterForm(form) {
   const input = form.querySelector('.newsletter-input');
@@ -893,21 +895,27 @@ function initNewsletterForm(form) {
       return;
     }
 
-    if (!NEWSLETTER_ENDPOINT) {
-      status.textContent = 'Danke für dein Interesse — der Versand startet in Kürze.';
-      status.className = 'newsletter-status success';
-      form.reset();
-      return;
-    }
-
     button.disabled = true;
     try {
       const res = await fetch(NEWSLETTER_ENDPOINT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          apikey: SUPABASE_ANON_KEY,
+          Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+          Prefer: 'return=minimal',
+        },
         body: JSON.stringify({ email }),
       });
+
+      if (res.status === 409) {
+        status.textContent = 'Diese Adresse ist schon angemeldet.';
+        status.className = 'newsletter-status success';
+        form.reset();
+        return;
+      }
       if (!res.ok) throw new Error('request failed');
+
       status.textContent = 'Danke! Du bist angemeldet.';
       status.className = 'newsletter-status success';
       form.reset();
