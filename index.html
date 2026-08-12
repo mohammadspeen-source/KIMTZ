@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mohammad Speen — AI Consultant &amp; Digital Transformation</title>
+<meta name="description" content="Mohammad Speen — KI-Berater, Dozent und Entwickler produktiver KI-Loesungen zwischen Strategie, Governance und Umsetzung." />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="noise-overlay" aria-hidden="true"></div>
+<canvas id="click-spark-canvas" aria-hidden="true"></canvas>
+
+<header class="site-header" id="top">
+  <a class="brand" href="#top">MS<span class="brand-dot">.</span></a>
+  <nav class="main-nav">
+    <a href="#profil">Profil</a>
+    <a href="#projekte">Projekte</a>
+    <a href="#werdegang">Werdegang</a>
+    <a href="#expertise">Expertise</a>
+    <a href="#kontakt" class="nav-cta">Kontakt</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <canvas id="dot-grid" aria-hidden="true"></canvas>
+    <div class="hero-inner">
+      <p class="eyebrow"><span class="eyebrow-dot"></span>AI Consultant · Digital Transformation · AI Solutions</p>
+      <h1 class="hero-title">
+        <span data-decrypt>KI, die man </span><span class="highlight" data-decrypt>produktiv</span><br />
+        <span data-decrypt>umsetzen kann.</span>
+      </h1>
+      <p class="hero-lead">
+        Von Strategie und Governance über Software- und Datenlösungen bis hin zu Lehre,
+        Workshops und produktiven AI-Anwendungen — Wirtschaftsinformatiker mit Erfahrung
+        in Unternehmensführung und realen KI-Projekten.
+      </p>
+      <div class="hero-actions">
+        <a href="#projekte" class="btn btn-primary magnet">Projekte ansehen</a>
+        <a href="#kontakt" class="btn btn-ghost magnet">Kontakt aufnehmen</a>
+      </div>
+      <div class="hero-meta">
+        <div class="meta-item">
+          <span class="meta-label">Standort</span>
+          <span class="meta-value">Frankfurt am Main</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Fokus</span>
+          <span class="meta-value">AI Strategy · Governance · Productive AI</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Aktiv seit</span>
+          <span class="meta-value"><span class="counter" data-from="1990" data-target="2017">1990</span></span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true"><span></span>Scrollen</div>
+  </section>
+
+  <!-- MOSAIC REVEAL -->
+  <section class="mosaic-section" id="signal">
+    <p class="mosaic-eyebrow">Aus dem Rauschen</p>
+    <h2 class="proximity-heading" data-proximity>Ein Signal wird sichtbar.</h2>
+    <div class="mosaic-stage">
+      <canvas id="mosaic-assemble-canvas"></canvas>
+      <canvas id="mosaic-distortion-canvas"></canvas>
+    </div>
+    <p class="mosaic-caption">Scrollen, um zusammenzusetzen — hovern, um wieder aufzulösen.</p>
+  </section>
+
+  <!-- PROFIL -->
+  <section class="section" id="profil">
+    <div class="section-head">
+      <span class="section-index">01</span>
+      <h2 class="proximity-heading" data-proximity>Kurzprofil</h2>
+    </div>
+    <div class="profil-grid">
+      <div class="profile-card-wrap">
+        <div class="profile-card" id="profileCard">
+          <div class="profile-card-glow"></div>
+          <div class="profile-card-inner">
+            <img src="assets/mohammad.jpg" alt="Mohammad Speen" onerror="this.parentElement.parentElement.classList.add('no-photo'); this.remove();" />
+            <div class="profile-card-fallback">MS</div>
+            <div class="profile-card-info">
+              <h3>Mohammad Speen</h3>
+              <p>AI Consultant</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="profil-text">
+        Wirtschaftsinformatiker (B.Sc.) mit Schwerpunkt Künstliche Intelligenz, Digitalisierung
+        und datengetriebene Prozessoptimierung. Mehrjährige Erfahrung in der Entwicklung
+        produktiver KI-Lösungen, der Digitalisierung komplexer Geschäftsprozesse sowie der
+        Vermittlung technischer Inhalte als Dozent für KI, Data Science und Softwareentwicklung.
+        Verbindet technische Umsetzung, Business-Verständnis und regulatorische Anforderungen
+        zu anwendbaren Lösungen.
+      </p>
+      <div class="snapshot-cards">
+        <div class="snap-card">
+          <span class="snap-tag">B.Sc.</span>
+          <h3>Engineering Business Information Systems</h3>
+          <p>Abschluss 2025</p>
+        </div>
+        <div class="snap-card">
+          <span class="snap-tag">seit 2017</span>
+          <h3>COO</h3>
+          <p>Digitalisierung, Teamführung, operative Steuerung</p>
+        </div>
+        <div class="snap-card">
+          <span class="snap-tag">Lehre</span>
+          <h3>KI-Dozent</h3>
+          <p>AI, Data Science, Python, Java, Prompt Engineering</p>
+        </div>
+        <div class="snap-card">
+          <span class="snap-tag">Umsetzung</span>
+          <h3>AI-Projekte</h3>
+          <p>Voice AI, RAG, ERP, Governance, Automatisierung</p>
+        </div>
+      </div>
+    </div>
+    <div class="focus-tags">
+      <span>AI Strategy</span><span>AI Solutions</span><span>Digital Transformation</span>
+      <span>Higher Education</span><span>AI Governance</span><span>Productive AI</span>
+    </div>
+  </section>
+
+  <!-- PROJEKTE -->
+  <section class="section" id="projekte">
+    <div class="section-head">
+      <span class="section-index">02</span>
+      <h2 class="proximity-heading" data-proximity>Ausgewählte Projekte</h2>
+      <span class="section-count"><span class="counter" data-from="0" data-target="6" data-pad="2">00</span> Einträge</span>
+    </div>
+    <div class="project-grid">
+
+      <article class="project-card">
+        <span class="project-cat">Voice AI · Healthcare</span>
+        <h3>Voice AI Agent — Praxis Löwenzahn</h3>
+        <p>Sprachbasierter KI-Agent für Patientenkommunikation, Terminannahme und
+          Vorqualifizierung in einer Frankfurter Praxis.</p>
+        <ul>
+          <li>Integration in bestehende Praxisabläufe</li>
+          <li>Fokus auf sensible Kommunikationsprozesse</li>
+        </ul>
+        <div class="chip-row"><span>LLMs</span><span>Voice AI</span><span>API Integration</span><span>DSGVO</span></div>
+      </article>
+
+      <article class="project-card">
+        <span class="project-cat">AI · ERP · Operations</span>
+        <h3>KI-gestützte Großhandelsplattform</h3>
+        <p>Full-Stack-Plattform zur Digitalisierung eines traditionellen Großhandelsbetriebs
+          mit CRM, Warenwirtschaft, Lagerverwaltung und KI-gestützter Bestellverarbeitung.</p>
+        <ul>
+          <li>Echtzeit-Analysen für Vertrieb und Umsatz</li>
+          <li>Prognosen für Bestände und Nachfrage</li>
+        </ul>
+        <div class="chip-row"><span>ERP</span><span>CRM</span><span>BI</span><span>WhatsApp</span><span>AI Automation</span></div>
+      </article>
+
+      <article class="project-card">
+        <span class="project-cat">Web App · Full Stack</span>
+        <h3>Gutachter Partner Portal</h3>
+        <p>Webbasiertes Portal für Gutachter- und Dokumentenprozesse mit strukturierter
+          Verwaltung, Rollenlogik und digitaler Berichtserstellung.</p>
+        <ul>
+          <li>Front- und Backend-Umsetzung</li>
+          <li>Automatisierte Gutachten- und Dokumentenprozesse</li>
+        </ul>
+        <div class="chip-row"><span>Full Stack</span><span>Dokumente</span><span>Workflow</span><span>KI Analyse</span></div>
+      </article>
+
+      <article class="project-card">
+        <span class="project-cat">Governance · Compliance</span>
+        <h3>AI Governance &amp; Regulatory Readiness</h3>
+        <p>Begleitung von Unternehmen bei KI-regulatorischen Anforderungen, Risikobewertung,
+          Dokumentationslogik und verantwortungsvoller Nutzung von KI-Systemen.</p>
+        <ul>
+          <li>Risikoklassifizierung und Transparenzpflichten</li>
+          <li>Governance-Strukturen für Fachbereiche</li>
+        </ul>
+        <div class="chip-row"><span>EU AI Act</span><span>DSGVO</span><span>Risk</span><span>Responsible AI</span></div>
+      </article>
+
+      <article class="project-card">
+        <span class="project-cat">RAG · Knowledge Systems</span>
+        <h3>RAG Commerce Assistant</h3>
+        <p>KI-Assistent für kontextbezogene Produktempfehlungen, Wissensdatenbanknutzung
+          und After-Sales-Support im Handelskontext.</p>
+        <ul>
+          <li>Kontextbasierte Produktempfehlungen</li>
+          <li>Strukturierung von Produkt- und Supportwissen</li>
+        </ul>
+        <div class="chip-row"><span>RAG</span><span>LLMs</span><span>Search</span><span>Commerce</span></div>
+      </article>
+
+      <article class="project-card">
+        <span class="project-cat">NLP · Process Automation</span>
+        <h3>NLP &amp; Translation Automation</h3>
+        <p>Einführung KI-gestützter Systeme zur Dokumentenklassifikation, Qualitätssicherung
+          und Beschleunigung mehrsprachiger Dokumentenprozesse.</p>
+        <ul>
+          <li>Automatisierte Translation-QA-Tools</li>
+          <li>Routing und Dokumentenhandling</li>
+        </ul>
+        <div class="chip-row"><span>NLP</span><span>QA</span><span>Classification</span><span>Workflow</span></div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- WERDEGANG -->
+  <section class="section" id="werdegang">
+    <div class="section-head">
+      <span class="section-index">03</span>
+      <h2 class="proximity-heading" data-proximity>Werdegang</h2>
+    </div>
+    <ol class="timeline">
+      <li>
+        <div class="timeline-date">07/2017 — heute</div>
+        <div class="timeline-body">
+          <h3>COO | AI &amp; Digital Transformation</h3>
+          <p class="timeline-org">Afghan Language Services, Frankfurt am Main</p>
+          <p>Einführung KI-gestützter Übersetzungs- und Qualitätssicherungssysteme,
+            Digitalisierung mehrsprachiger Dokumentenprozesse, Teamführung und
+            Zusammenarbeit mit Behörden, Gerichten und internationalen Partnern.</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-date">05/2024 — heute</div>
+        <div class="timeline-body">
+          <h3>Dozent für KI, Data Science &amp; Softwareentwicklung</h3>
+          <p class="timeline-org">karriere tutor GmbH</p>
+          <p>Lehrveranstaltungen in KI, Data Science, Python, Java und Prompt Engineering;
+            Vermittlung von LLMs, NLP, Machine Learning und praxisnaher Umsetzung.</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-date">10/2024 — heute</div>
+        <div class="timeline-body">
+          <h3>Dozent für AI &amp; Big Data</h3>
+          <p class="timeline-org">bfw — Berufsfortbildungswerk des DGB</p>
+          <p>Entwicklung von Rahmenlehrplänen für AI &amp; Big Data sowie AI &amp; Prompt
+            Engineering; Konzeption strukturierter Lern- und Workshopformate.</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-date">03/2025 — 05/2025</div>
+        <div class="timeline-body">
+          <h3>AI Instructor (Deutsch &amp; Englisch)</h3>
+          <p class="timeline-org">Masterschool</p>
+          <p>Durchführung von AI-Trainings in deutscher und englischer Sprache; Betreuung
+            von Lernenden und praxisnaher Projektarbeit.</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-date">01/2024 — 03/2025</div>
+        <div class="timeline-body">
+          <h3>Dozent für E-Commerce und Online-Marketing</h3>
+          <p class="timeline-org">Donner + Partner, Wiesbaden</p>
+          <p>Unterricht in IHK-Umschulungsmaßnahmen, Prüfungsvorbereitung und Integration
+            praxisnaher digitaler Werkzeuge.</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-date">11/2023 — 02/2024</div>
+        <div class="timeline-body">
+          <h3>Consulting Assistant mit KI-Fokus</h3>
+          <p class="timeline-org">Telis-Finanz AG</p>
+          <p>Analyse von KI-Anwendungen im Kundenservice und Bachelorarbeit zur Effizienz
+            von KI im Versicherungsumfeld.</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-date">10/2021 — 03/2022</div>
+        <div class="timeline-body">
+          <h3>Intern, AI &amp; IT Consulting</h3>
+          <p class="timeline-org">Treser Consulting</p>
+          <p>Mitarbeit an cloudbasierten Lösungen, Dokumentenmanagement-Workflows und
+            internen Kommunikations- und Entscheidungswerkzeugen.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section class="section" id="expertise">
+    <div class="section-head">
+      <span class="section-index">04</span>
+      <h2 class="proximity-heading" data-proximity>Expertise</h2>
+    </div>
+    <div class="expertise-grid">
+      <div class="expertise-card">
+        <h3>Artificial Intelligence</h3>
+        <ul><li>LLM Applications</li><li>RAG Systems</li><li>NLP</li><li>Machine Learning</li><li>Prompt Engineering</li></ul>
+      </div>
+      <div class="expertise-card">
+        <h3>Digital Transformation</h3>
+        <ul><li>Prozessdesign</li><li>Workflow Automation</li><li>AI Adoption</li><li>Stakeholder Management</li><li>Workshops</li></ul>
+      </div>
+      <div class="expertise-card">
+        <h3>Governance</h3>
+        <ul><li>EU AI Act</li><li>DSGVO</li><li>Responsible AI</li><li>Risk Management</li><li>Human Oversight</li></ul>
+      </div>
+      <div class="expertise-card">
+        <h3>Software &amp; Data</h3>
+        <ul><li>Python</li><li>Java</li><li>SQL</li><li>APIs</li><li>Cloud Services</li></ul>
+      </div>
+    </div>
+
+    <div class="lehre-block">
+      <h3>Lehre &amp; Wissenstransfer</h3>
+      <p>Vermittlung komplexer technischer Inhalte für unterschiedliche Zielgruppen: von
+        Grundlagen der Programmierung über Data Science und Machine Learning bis hin zu
+        Generativer KI, Prompt Engineering, AI Governance und produktionsnahen
+        KI-Anwendungen. Zusätzlich Begleitung praxisorientierter Projekte und Mitwirkung
+        als Zweitprüfer bei einer KI-bezogenen Bachelorarbeit.</p>
+      <div class="chip-row">
+        <span>Generative AI</span><span>LLMs</span><span>Prompt Engineering</span>
+        <span>Machine Learning</span><span>NLP</span><span>Data Science</span>
+        <span>Python</span><span>Java</span><span>AI &amp; Big Data</span><span>E-Commerce</span>
+      </div>
+    </div>
+
+    <div class="edu-lang-grid">
+      <div class="edu-block">
+        <h3>Ausbildung</h3>
+        <p class="edu-degree">Bachelor of Science — Engineering Business Information Systems</p>
+        <p class="edu-org">Frankfurt University of Applied Sciences · Abschluss 2025</p>
+        <p class="edu-thesis">Bachelorarbeit: Efficiency of AI in Customer Service for Insurance Companies</p>
+      </div>
+      <div class="lang-block">
+        <h3>Sprachen</h3>
+        <ul class="lang-list">
+          <li><span>Deutsch</span><em>fließend</em></li>
+          <li><span>Englisch</span><em>fließend</em></li>
+          <li><span>Pashto</span><em>fließend</em></li>
+          <li><span>Bosnisch</span><em>fließend</em></li>
+          <li><span>Arabisch</span><em>Grundkenntnisse</em></li>
+          <li><span>Französisch</span><em>Grundkenntnisse</em></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section class="section kontakt" id="kontakt">
+    <div class="kontakt-inner">
+      <span class="section-index">05</span>
+      <h2 class="proximity-heading" data-proximity>Bereit für den nächsten Schritt?</h2>
+      <p>Ob KI-Strategie, produktive Umsetzung oder Wissensvermittlung — sprechen wir über
+        Ihr Vorhaben.</p>
+      <a class="btn btn-primary btn-large magnet" href="mailto:mohammad.speen@icloud.com">mohammad.speen@icloud.com</a>
+      <div class="kontakt-meta">
+        <a href="https://linkedin.com/in/mohammad-speen-ai-expert" target="_blank" rel="noopener">LinkedIn</a>
+        <span>+49 69 86099524</span>
+        <span>Frankfurt am Main</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <span>Mohammad Speen · AI Consultant</span>
+  <span>© 2026</span>
+</footer>
+
+<script src="vendor/three.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
