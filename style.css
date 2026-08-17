@@ -353,6 +353,32 @@ a{ color:inherit; text-decoration:none; }
 }
 .kontakt-meta a:hover{ color:var(--accent); }
 
+/* ---------- Contact form ---------- */
+.contact-form{ width:100%; display:flex; flex-direction:column; gap:12px; margin-bottom:8px; }
+.contact-row{ display:flex; gap:12px; flex-wrap:wrap; }
+.contact-input{
+  flex:1; min-width:200px;
+  padding:14px 20px; border-radius:16px;
+  border:1px solid var(--panel-border); background:var(--panel); color:var(--text);
+  font-size:14.5px; font-family:var(--sans);
+  transition:border-color .2s ease, box-shadow .2s ease;
+}
+.contact-input::placeholder{ color:var(--text-faint); }
+.contact-input:focus{
+  outline:none; border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-dim);
+}
+.contact-textarea{ resize:vertical; min-height:120px; font-family:var(--sans); line-height:1.5; }
+.contact-form .btn{ align-self:center; margin-top:8px; }
+.kontakt .kontakt-direct{
+  font-size:14px; color:var(--text-faint); margin:28px 0 0;
+}
+.kontakt-direct a{ color:var(--text-dim); transition:color .15s ease; }
+.kontakt-direct a:hover{ color:var(--accent); }
+
+@media (max-width:600px){
+  .contact-row{ flex-direction:column; }
+}
+
 /* ---------- Newsletter ---------- */
 .section-eyebrow{
   font-family:var(--mono); font-size:12px; letter-spacing:0.1em; text-transform:uppercase;

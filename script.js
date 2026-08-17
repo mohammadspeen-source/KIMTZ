@@ -928,8 +928,59 @@ function initNewsletterForm(form) {
   });
 }
 
+/* ---------------------------------------------------------
+   Contact form — sends to the n8n production webhook. Requires
+   the "Kontaktanfrage" workflow in n8n to stay Active; if it's
+   ever deactivated, submissions will start failing.
+--------------------------------------------------------- */
+const CONTACT_WEBHOOK_URL = 'https://kimtz-run1.app.n8n.cloud/webhook/kontaktanfrage';
+
+function initContactForm(form) {
+  const nameInput = document.getElementById('contactName');
+  const emailInput = document.getElementById('contactEmail');
+  const messageInput = document.getElementById('contactMessage');
+  const status = document.getElementById('contactStatus');
+  const button = form.querySelector('button');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const message = messageInput.value.trim();
+    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    if (!name || !isValidEmail || !message) {
+      status.textContent = 'Bitte Name, eine gültige E-Mail-Adresse und eine Nachricht angeben.';
+      status.className = 'newsletter-status error';
+      return;
+    }
+
+    button.disabled = true;
+    try {
+      const res = await fetch(CONTACT_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message }),
+      });
+      if (!res.ok) throw new Error('request failed');
+
+      status.textContent = 'Danke! Ihre Nachricht ist angekommen.';
+      status.className = 'newsletter-status success';
+      form.reset();
+    } catch (err) {
+      status.textContent = 'Etwas ist schiefgelaufen — bitte per E-Mail direkt schreiben.';
+      status.className = 'newsletter-status error';
+    } finally {
+      button.disabled = false;
+    }
+  });
+}
+
 /* boot */
 window.addEventListener('DOMContentLoaded', () => {
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) initContactForm(contactForm);
+
   const newsletterForm = document.getElementById('newsletterForm');
   if (newsletterForm) initNewsletterForm(newsletterForm);
 

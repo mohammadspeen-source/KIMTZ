@@ -357,7 +357,44 @@
       <h2 class="proximity-heading" data-proximity>Bereit für den nächsten Schritt?</h2>
       <p>Ob KI-Strategie, produktive Umsetzung oder Wissensvermittlung — sprechen wir über
         Ihr Vorhaben.</p>
-      <a class="btn btn-primary btn-large magnet" href="mailto:mohammad.speen@icloud.com">mohammad.speen@icloud.com</a>
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="contact-row">
+          <input
+            type="text"
+            class="contact-input"
+            id="contactName"
+            placeholder="Name"
+            aria-label="Name"
+            autocomplete="name"
+            required
+          />
+          <input
+            type="email"
+            class="contact-input"
+            id="contactEmail"
+            placeholder="E-Mail-Adresse"
+            aria-label="E-Mail-Adresse"
+            autocomplete="email"
+            required
+          />
+        </div>
+        <textarea
+          class="contact-input contact-textarea"
+          id="contactMessage"
+          placeholder="Ihre Nachricht"
+          aria-label="Nachricht"
+          rows="5"
+          required
+        ></textarea>
+        <button type="submit" class="btn btn-primary btn-large magnet">Nachricht senden</button>
+      </form>
+      <p class="newsletter-status" id="contactStatus" role="status" aria-live="polite"></p>
+
+      <p class="kontakt-direct">
+        oder direkt:
+        <a href="mailto:mohammad.speen@icloud.com">mohammad.speen@icloud.com</a>
+      </p>
       <div class="kontakt-meta">
         <a href="https://linkedin.com/in/mohammad-speen-ai-expert" target="_blank" rel="noopener">LinkedIn</a>
         <span>+49 69 86099524</span>
